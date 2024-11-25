@@ -798,7 +798,7 @@
         <div class="blur"></div>
         <div class="main-content ml-260">
             <!-- Header -->
-            <header class="flex align-center shadow Top">
+            <header class="flex align-center shadow whitespace Top">
                 <div class="aside-head flex align-center hidden-logo hidden">
                     <div class="flex align-center ">
                         <img src="./assets/images/logo.svg" alt="" class="head-logo">
@@ -845,17 +845,17 @@
                             <li class="head-icons theme">
                                 <i class="ri-sun-line"></i>
                             </li>
-                            <li class="head-icons us">
+                            <li class="head-icons us remove">
                                 <img src="./assets/images/us.svg" alt="" height="20px" width="20px">
                             </li>
-                            <li class="head-icons">
+                            <li class="head-icons remove">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M22 10C22.0185 10.7271 22 11.0542 22 12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
                                     <path d="M6 8L8.1589 9.79908C9.99553 11.3296 10.9139 12.0949 12 12.0949C13.0861 12.0949 14.0045 11.3296 15.8411 9.79908" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
                                     <circle cx="19" cy="5" r="3" stroke="currentColor" stroke-width="1.5"></circle>
                                 </svg>
                             </li>
-                            <li class="head-icons notification">
+                            <li class="head-icons notification remove">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M19.0001 9.7041V9C19.0001 5.13401 15.8661 2 12.0001 2C8.13407 2 5.00006 5.13401 5.00006 9V9.7041C5.00006 10.5491 4.74995 11.3752 4.28123 12.0783L3.13263 13.8012C2.08349 15.3749 2.88442 17.5139 4.70913 18.0116C9.48258 19.3134 14.5175 19.3134 19.291 18.0116C21.1157 17.5139 21.9166 15.3749 20.8675 13.8012L19.7189 12.0783C19.2502 11.3752 19.0001 10.5491 19.0001 9.7041Z" stroke="currentColor" stroke-width="1.5"></path>
                                     <path d="M7.5 19C8.15503 20.7478 9.92246 22 12 22C14.0775 22 15.845 20.7478 16.5 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
@@ -1612,9 +1612,14 @@
     <script>
         $(document).ready(function(){
             $(".left-arrow").on("click",function(){
-                $("aside").addClass("left-260");
-                $(".main-content").removeClass("ml-260");
-                $(".hidden-logo").removeClass("hidden");
+                if($(window).width() < 576){
+                    $("aside").addClass("left-260");
+                    $(".hidden-logo").removeClass("hidden");
+                } else {
+                    $("aside").addClass("left-260");
+                    $(".main-content").removeClass("ml-260");
+                    $(".hidden-logo").removeClass("hidden");
+                }
             })
             $(".menu-icon").on("click",function(){
                 $("aside").removeClass("left-260");
@@ -1643,6 +1648,13 @@
                 $(".blur").removeClass("blur-banner");
             })   
         })
+        $(window).on("load",function(){
+            if($(window).width() < 576){
+                $("aside").addClass("left-260");
+                $(".hidden-logo").removeClass("hidden");
+            }
+        })
+
     </script>
 </body>
 </html>

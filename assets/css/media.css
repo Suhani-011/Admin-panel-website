@@ -81,3 +81,12 @@
         display:block;
     }
 }
+
+@media (max-width:576px) {
+    .ml-260 {
+        margin: 0;
+    }
+    .remove{
+        display: none;
+    }
+}

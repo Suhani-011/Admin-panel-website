@@ -1421,3 +1421,6 @@ td {
 html {
     scroll-behavior: smooth;
 }
+.left-0{
+    left: 0;
+}
