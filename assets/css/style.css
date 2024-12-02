@@ -103,11 +103,6 @@
     width: 100%;
 }
 
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
 .light-theme {
     --color-white: #fff;
     --color-black: #000;
@@ -673,19 +668,14 @@ header {
 }
 
 .activity-cursor {
-    overflow-y: scroll;
-    top: 0;
-    left: 0;
-    height: 290px;
+    overflow-y: scroll;    height: 290px;
     margin-bottom: 1rem;
     margin-right: -.75rem;
     padding-right: .75rem;
 }
-
 .activity-scrollbar {
     cursor: pointer;
 }
-
 .chart {
     overflow: hidden;
     height: 100%;
@@ -1423,4 +1413,39 @@ html {
 }
 .left-0{
     left: 0;
+}
+/* -----------------Loader CSS-------------------- */
+.loader{
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    z-index: 9999;
+  }
+body{
+    --_g: no-repeat radial-gradient(farthest-side,#4368f0 94%, #0000);
+  }
+.webview-loader {
+    width: 35px;
+    aspect-ratio: 1;
+    background:
+      var(--_g) 0 0,
+      var(--_g) 100% 0,
+      var(--_g) 100% 100%,
+      var(--_g) 0 100%;
+    background-size: 40% 40%;
+    animation: webview-loader-frames 0.5s infinite;
+  }
+@keyframes webview-loader-frames {
+    100% {
+        background-position:
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 0;
+    }
 }
